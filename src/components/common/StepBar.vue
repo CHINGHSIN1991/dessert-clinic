@@ -2,5 +2,5 @@
 </script>
 
 <template>
-  <div>Steps</div>
+  <section>Steps</section>
 </template>

@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import StepBar from "./components/StepBar.vue";
+import NavigationBar from "./components/common/NavigationBar.vue";
+import { RouterView } from "vue-router";
+
 </script>
 
 <template>
-  <StepBar />
-  index
+  <NavigationBar />
+  <RouterView />
 </template>
