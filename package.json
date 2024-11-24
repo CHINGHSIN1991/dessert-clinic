@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/icon": "^1.8.2",
     "@nuxtjs/color-mode": "^3.5.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.2",
+    "vue-tsc": "^2.1.10"
   }
 }
