@@ -2,6 +2,32 @@
 import { ref } from 'vue';
 const isMenuOpen = ref(false);
 
+const sections = [{
+  title: '產品介紹',
+  items: [
+    {
+      label: '鮮奶油蛋糕',
+      url: 'cream-cake',
+    }, {
+      label: '巴斯克蛋糕',
+      url: 'basque',
+    }, {
+      label: '餅乾',
+      url: 'cookie',
+    }
+  ]
+}, {
+  title: '關於我們',
+  items: [
+    {
+      label: '品牌故事',
+      url: 'brand',
+    }, {
+      label: '測試測試',
+      url: 'test1',
+    }
+  ]
+}];
 const onMenuClick = () => {
   isMenuOpen.value = !isMenuOpen.value;
 };
@@ -19,9 +45,8 @@ const onMenuClick = () => {
       </Button>
     </div>
     <transition>
-      <div class="flex w-full align-top overflow-hidden absolute" :class="isMenuOpen ? 'h-10' : 'h-0'">
-        <div>121212</div>
-        <NavBarMenuSection title="產品介紹" />
+      <div class="flex w-full align-top overflow-hidden absolute" :class="isMenuOpen ? 'h-100' : 'h-0'">
+        <NavBarMenuSection v-for="section in sections" :section="section" :key="section.title" />
       </div>
     </transition>
   </div>
