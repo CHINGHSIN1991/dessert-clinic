@@ -20,7 +20,6 @@ watchEffect(() => {
 <template>
   <div>
     <NuxtLoadingIndicator color="#f00" :height="10" :throttle="0" />
-    <NavBar />
     <slot />
   </div>
 </template>
