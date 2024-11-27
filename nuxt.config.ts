@@ -2,6 +2,19 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  app: {
+    head: {
+      viewport: 'width=500, initial-scale=1',
+      title: '甜點寬治療室',
+      meta: [
+        { name: 'description', content: '這是一個甜點網站' },
+        { property: 'title', content: '甜點寬治療室' },
+        { property: 'og:title', content: ''
+
+        }
+      ]
+    }
+  },
   imports: {
     dirs: ['stores'],
   },
