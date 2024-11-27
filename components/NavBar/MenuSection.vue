@@ -9,9 +9,9 @@ const props = defineProps<Props>();
 
 <template>
   <div class="border-2 border-green-400 m-2 w-full h-full">
-    <NuxtLink :to="item.url" v-for="item in section.items" :key="item.label">{{ item.label }}</NuxtLink>
+    <NavBarMenuItem v-for="item in section.items" :item="item" :key="item.label" />
     <div>
-      {{ props.section.title }}
+      {{ section.title }}
     </div>
   </div>
 
