@@ -3,7 +3,6 @@
 
 <template>
   <div>
-    <NavBar />
     Home page
     <Button>12121212</Button>
   </div>
