@@ -65,7 +65,7 @@ const onMenuClick = () => {
 </script>
 <template>
   <div>
-    <div class="border-2 border-slate-800 m-2 flex items-center justify-between">
+    <div class="basic-layout flex items-center justify-between">
       <div class="flex justify-between w-full h-[36px] items-center border-r-2 border-slate-800">
         <div>color theme</div>
         <img src="@/assets/kuanLOGO.png" alt="" class="w-20 object-contain mx-4">

@@ -76,3 +76,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.basic-layout {
+  border: solid 2px;
+  border-color: rgb(71 85 105); /*slate-600*/
+  margin: 1rem;
+}
