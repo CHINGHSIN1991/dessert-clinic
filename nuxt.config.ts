@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  supabase: {
+    redirect: false,
+  },
   imports: {
     dirs: ['stores'],
   },
@@ -24,7 +27,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/icon',
-    '@nuxtjs/supabase'
+    '@nuxtjs/supabase',
+    '@vueuse/nuxt'
   ],
   shadcn: {
     /**
