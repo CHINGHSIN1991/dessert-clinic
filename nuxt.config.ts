@@ -29,7 +29,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/supabase',
     '@vueuse/nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/i18n'
   ],
   shadcn: {
     /**
