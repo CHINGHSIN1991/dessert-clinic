@@ -32,6 +32,24 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n'
   ],
+  i18n: {
+    strategy: "no_prefix",
+    locales: [
+      {
+        code: "zh-TW",
+        file: "zh-TW.json",
+      },
+      {
+        code: "en-US",
+        file: "en-US.json",
+      },
+    ],
+    langDir: "language",
+    defaultLocale: "zh-TW",
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
+  },
   shadcn: {
     /**
      * Prefix for all the imported component
