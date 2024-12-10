@@ -30,7 +30,8 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@vueuse/nuxt',
     '@nuxt/icon',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@formkit/auto-animate/nuxt'
   ],
   i18n: {
     strategy: "no_prefix",
