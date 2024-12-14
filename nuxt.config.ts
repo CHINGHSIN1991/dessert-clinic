@@ -31,7 +31,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/icon',
     '@nuxtjs/i18n',
-    '@formkit/auto-animate/nuxt'
   ],
   i18n: {
     strategy: "no_prefix",
