@@ -9,7 +9,7 @@ const props = defineProps<Props>();
 
 <template>
   <div class="border">
-    <NuxtLink :to="item.url">{{ item.label }}</NuxtLink>
+    <NuxtLink :to="item.url">{{ $t(item.label_string) }}</NuxtLink>
   </div>
 </template>
 

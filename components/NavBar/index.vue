@@ -4,64 +4,64 @@ const isMenuOpen = ref(false);
 const isDark = ref(false);
 
 const sections = [{
-  title: '產品介紹',
+  title_string: 'section-product-introduction',
   url: 'products',
   items: [
     {
-      label: '鮮奶油蛋糕',
+      label_string: 'product-category-cream-cake',
       url: '/products/cream-cake',
     }, {
-      label: '巴斯克蛋糕',
+      label_string: 'product-category-basque',
       url: '/products/basque',
     }, {
-      label: '餅乾',
+      label_string: 'product-category-cookie',
       url: '/products/cookie',
     }
   ]
 }, {
-  title: '關於我們',
+  title_string: 'section-about',
   url: 'about',
   items: [
     {
-      label: '品牌故事',
+      label_string: 'about-brand',
       url: '/about/brand',
     }, {
-      label: '常見問題',
+      label_string: 'about-faq',
       url: '/about/qna',
     }, {
-      label: '聯絡我們',
+      label_string: 'about-contact',
       url: '/about/contact',
     }
   ]
 }, {
-  title: '最新消息',
+  title_string: 'section-news',
   items: [
     {
-      label: '團購開團',
+      label_string: 'news-group-buying',
       url: 'brand',
     }, {
-      label: '出攤消息',
+      label_string: 'news-event',
       url: 'test1',
     }, {
-      label: '新聞',
+      label_string: 'news-news',
       url: 'news',
     }
   ]
 }, {
-  title: '會員專區',
+  title_string: 'section-member',
   url: 'member',
   items: [
     {
-      label: '註冊/登入',
+      label_string: 'member-login-signup',
       url: '/member/login',
     }, {
-      label: '會員資訊',
+      label_string: 'member-detail',
       url: '/member/member-detail'
     }, {
-      label: '訂單查詢',
+      label_string: 'member-order',
       url: '/member/test1',
     }, {
-      label: '購物車',
+      label_string: 'member-cart',
       url: '/member/cart',
     }
   ]
@@ -79,7 +79,7 @@ const onMenuClick = () => {
           <img src="@/assets/kuanLOGO.png" alt="" class="w-20 object-contain mx-4">
         </NuxtLink>
         <div>
-          <Button variant="ghost">Log out</Button>
+          <Button variant="ghost">{{ $t('logout') }}</Button>
         </div>
       </div>
       <Button variant="ghost" @click="onMenuClick" class="px-5 hover:bg-slate-600 hover:text-white">
