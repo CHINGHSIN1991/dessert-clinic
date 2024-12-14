@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-const isMenuOpen = ref(false);
-const isDark = ref(false);
+const statusStore = useStatusStore();
 
 const sections = [{
   title_string: 'section-product-introduction',
@@ -67,7 +65,7 @@ const sections = [{
   ]
 }];
 const onMenuClick = () => {
-  isMenuOpen.value = !isMenuOpen.value;
+  statusStore.setIsMenuOpen(!statusStore.isMenuOpen);
 };
 </script>
 <template>
@@ -87,8 +85,8 @@ const onMenuClick = () => {
       </Button>
     </div>
     <transition name="menu">
-      <div v-if="isMenuOpen" class="flex w-full align-top overflow-hidden absolute">
-        <NavBarMenuSection v-for="section in sections" :section="section" :key="section.title" />
+      <div v-if="statusStore.isMenuOpen" class="flex w-full align-top overflow-hidden absolute">
+        <NavBarMenuSection v-for="section in sections" :section="section" :key="section.title_string" />
       </div>
     </transition>
   </div>
