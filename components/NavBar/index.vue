@@ -32,17 +32,18 @@ const sections = [{
     }
   ]
 }, {
-  title_string: 'section-news',
+  title_string: 'section-event',
+  url: 'event',
   items: [
     {
-      label_string: 'news-group-buying',
-      url: 'brand',
+      label_string: 'event-group-buying',
+      url: 'event/group-buying',
     }, {
-      label_string: 'news-event',
-      url: 'test1',
+      label_string: 'event-event',
+      url: 'event/event',
     }, {
-      label_string: 'news-news',
-      url: 'news',
+      label_string: 'event-news',
+      url: 'event/news',
     }
   ]
 }, {
@@ -54,10 +55,10 @@ const sections = [{
       url: '/member/login',
     }, {
       label_string: 'member-detail',
-      url: '/member/member-detail'
+      url: '/member/detail'
     }, {
       label_string: 'member-order',
-      url: '/member/test1',
+      url: '/member/orders',
     }, {
       label_string: 'member-cart',
       url: '/member/cart',

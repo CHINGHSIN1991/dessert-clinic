@@ -18,10 +18,12 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <NuxtLoadingIndicator color="#f00" :height="10" :throttle="0" />
     <NavBar />
-    <slot />
+    <div class="grow flex items-stretch flex-row w-screen">
+      <slot />
+    </div>
   </div>
 </template>
 

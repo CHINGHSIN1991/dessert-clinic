@@ -1,9 +1,11 @@
-<script setup lang="ts">
+<script setup>
 </script>
-
 <template>
-  <div>
-    Home page
-    <Button>12121212</Button>
+  <div class="basic-layout grow">
+    <ul>
+      <li>{{ $t('cancel') }}</li>
+      <li>{{ $t('email') }}</li>
+      <li>{{ $t('date') }}</li>
+    </ul>
   </div>
 </template>
