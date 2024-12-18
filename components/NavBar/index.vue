@@ -37,13 +37,13 @@ const sections = [{
   items: [
     {
       label_string: 'event-group-buying',
-      url: 'event/group-buying',
+      url: '/event/group-buying',
     }, {
       label_string: 'event-event',
-      url: 'event/event',
+      url: '/event/event',
     }, {
       label_string: 'event-news',
-      url: 'event/news',
+      url: '/event/news',
     }
   ]
 }, {
