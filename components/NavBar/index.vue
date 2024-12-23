@@ -80,15 +80,13 @@ const onMenuClick = () => {
         <div>
           <Button variant="ghost">{{ $t('logout') }}</Button>
         </div>
-        <div>{{ statusStore.currentSection }}</div>
       </div>
       <Button variant="ghost" @click="onMenuClick" class="px-5 hover:bg-slate-600 hover:text-white">
         menu
       </Button>
     </div>
-    <div v-if="statusStore.isMenuOpen" class="flex w-full align-top overflow-hidden absolute">
-      <NavBarMenuSection v-for="section in sections" :section="section" :current="statusStore.currentSection"
-        :key="section.title_string" />
+    <div class="flex w-full align-top absolute">
+      <NavBarMenuSection v-for="section in sections" :section="section" :key="section.title_string" />
     </div>
   </div>
 
