@@ -12,22 +12,20 @@ const isCurrent = computed(() => props.section.url === statusStore.currentSectio
 const getSectionHeight = () => {
   switch (true) {
     case isCurrent.value:
-      return 'h-screen';
+      return 'h-[calc(100vh-88px)] border-slate-600 border-2';
     case statusStore.isMenuOpen:
-      return 'h-full';
+      return 'h-full border-slate-600 border-2';
     default:
-      return 'h-0 border-0 border-transparent';
+      return 'h-0 border-slate-600 border-0';
   }
 };
 </script>
 
 <template>
-  <div class="basic-layout w-full bg-white overflow-hidden transition duration-200 ease-in-out"
-    :class="getSectionHeight()">
+  <div class="m-2 w-full bg-white overflow-hidden transition-all duration-300 ease-in-out" :class="getSectionHeight()">
     <NavBarMenuItem v-for="item in section.items" :item="item" :key="item.label" />
     <div>
       {{ $t(section.title_string) }}
-      {{ JSON.stringify(isCurrent) }}
     </div>
   </div>
 </template>

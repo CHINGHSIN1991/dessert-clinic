@@ -25,7 +25,7 @@ const sections = [{
       url: '/about/brand',
     }, {
       label_string: 'about-faq',
-      url: '/about/qna',
+      url: '/about/faq',
     }, {
       label_string: 'about-contact',
       url: '/about/contact',
@@ -85,7 +85,7 @@ const onMenuClick = () => {
         menu
       </Button>
     </div>
-    <div class="flex w-full align-top absolute">
+    <div class="flex w-full align-top absolute p-2">
       <NavBarMenuSection v-for="section in sections" :section="section" :key="section.title_string" />
     </div>
   </div>
