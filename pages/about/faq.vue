@@ -4,9 +4,7 @@
 
 <template>
   <div>
-    <AboutHeader />
     <h1>Page: faq</h1>
-    <AboutFooter />
   </div>
 </template>
 
