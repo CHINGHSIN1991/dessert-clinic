@@ -3,7 +3,7 @@ const statusStore = useStatusStore();
 
 const sections = [{
   title_string: 'section-product-introduction',
-  url: 'products',
+  url: '/products',
   items: [
     {
       label_string: 'product-category-cream-cake',
@@ -18,7 +18,7 @@ const sections = [{
   ]
 }, {
   title_string: 'section-about',
-  url: 'about',
+  url: '/about',
   items: [
     {
       label_string: 'about-brand',
@@ -33,7 +33,7 @@ const sections = [{
   ]
 }, {
   title_string: 'section-event',
-  url: 'event',
+  url: '/event',
   items: [
     {
       label_string: 'event-group-buying',
@@ -48,7 +48,7 @@ const sections = [{
   ]
 }, {
   title_string: 'section-member',
-  url: 'member',
+  url: '/member',
   items: [
     {
       label_string: 'member-login-signup',

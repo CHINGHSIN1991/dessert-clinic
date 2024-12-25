@@ -7,7 +7,7 @@ const props = defineProps<Props>();
 
 const statusStore = useStatusStore();
 
-const isCurrent = computed(() => props.section.url === statusStore.currentSection);
+const isCurrent = computed(() => props.section.url === `/${statusStore.currentSection}`);
 
 const getSectionHeight = () => {
   switch (true) {
@@ -22,10 +22,15 @@ const getSectionHeight = () => {
 </script>
 
 <template>
-  <div class="m-2 w-full bg-white overflow-hidden transition-all duration-300 ease-in-out" :class="getSectionHeight()">
+  <div class="flex flex-col m-2 w-full bg-white overflow-hidden transition-all duration-300 ease-in-out"
+    :class="getSectionHeight()">
     <NavBarMenuItem v-for="item in section.items" :item="item" :key="item.label" />
-    <div>
-      {{ $t(section.title_string) }}
+    <div class="h-500 border grow">
+      <NuxtLink :to="section.url">
+        <div class="p-2 text-3xl font-extrabold flex items-end">
+          {{ $t(section.title_string) }}
+        </div>
+      </NuxtLink>
     </div>
   </div>
 </template>
