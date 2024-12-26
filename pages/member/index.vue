@@ -7,7 +7,7 @@
     <div class="border-2 border-slate-600 col-span-3">
       content
     </div>
-    <div>
+    <div class="border-2 border-slate-600">
     </div>
   </div>
 </template>

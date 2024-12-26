@@ -3,11 +3,12 @@ const { data } = useFetch<any>('https://vue-lessons-api.vercel.app/courses/list'
 </script>
 
 <template>
-  <div>
-    <h1>Page: basque</h1>
-    <section>
-      <CardList :courses="data" />
-    </section>
+  <div class="grid grid-cols-4 gap-4 w-full m-4">
+    <div>
+    </div>
+    <div class="border-2 border-slate-600 col-span-3">
+      BASQUE
+    </div>
   </div>
 </template>
 

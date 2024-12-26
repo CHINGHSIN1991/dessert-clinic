@@ -22,21 +22,25 @@ async function login(params: any) {
 </script>
 
 <template>
-  <div class="basic-layout w-full">
-    {{ email }}
-    {{ password }}
-    <form @submit.prevent="signUp">
-      <div class="grid w-full max-w-sm items-center gap-1.5">
-        <Label for="username">User name</Label>
-        <Input id="username" type="text" placeholder="Email" v-model="email" />
-      </div>
-      <div class="grid w-full max-w-sm items-center gap-1.5">
-        <Label for="password">Password</Label>
-        <Input id="password" type="password" placeholder="pw" v-model="password" />
-      </div>
-      <Button @click="signUp">Sign Up</Button>
-      <Button @click="login">Login</Button>
-    </form>
+  <div class="grid grid-cols-4 gap-4 w-full m-4">
+    <div class="border-2 border-slate-600 col-span-3">
+      {{ email }}
+      {{ password }}
+      <form @submit.prevent="signUp">
+        <div class="grid w-full max-w-sm items-center gap-1.5">
+          <Label for="username">User name</Label>
+          <Input id="username" type="text" placeholder="Email" v-model="email" />
+        </div>
+        <div class="grid w-full max-w-sm items-center gap-1.5">
+          <Label for="password">Password</Label>
+          <Input id="password" type="password" placeholder="pw" v-model="password" />
+        </div>
+        <Button @click="signUp">Sign Up</Button>
+        <Button @click="login">Login</Button>
+      </form>
+    </div>
+    <div class="border-2 border-slate-600">
+    </div>
   </div>
 </template>
 
