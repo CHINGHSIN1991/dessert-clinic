@@ -5,10 +5,12 @@ const { locale } = useI18n();
 const currentLabel = computed(() =>
   languageList.find(option => option.value === locale.value)?.label ?? 'Lang'
 );
+
 watch(locale, (newLocale) => {
   const localeCookie = useCookie('i18n_locale');
   localeCookie.value = newLocale;
 });
+
 </script>
 <template>
   <DropdownMenu>

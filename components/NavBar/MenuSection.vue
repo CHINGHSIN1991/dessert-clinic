@@ -4,19 +4,14 @@ interface Props {
   section: any;
 }
 const props = defineProps<Props>();
-
 const statusStore = useStatusStore();
-
-const isCurrent = computed(() => props.section.url === `/${statusStore.currentSection}`);
 
 const getSectionHeight = () => {
   switch (true) {
-    case isCurrent.value:
-      return 'h-[calc(100vh-88px)] border-slate-600 border-2';
     case statusStore.isMenuOpen:
-      return 'h-full border-slate-600 border-2';
+      return 'h-[240px] border-slate-600 border-2';
     default:
-      return 'h-0 border-slate-600 border-0';
+      return 'h-[0px] border-slate-600 border-0';
   }
 };
 </script>
