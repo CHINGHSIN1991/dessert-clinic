@@ -24,7 +24,8 @@ const onMenuClick = () => {
       </Button>
     </div>
     <div class="flex w-full align-top absolute p-2">
-      <NavBarMenuSection v-for="section in sectionList" :section="section" :key="section.title_string" />
+      <NavBarMenuSection v-for="(section, index) in sectionList" :section="section" :index="index"
+        :key="section.title_string" />
     </div>
   </div>
 
