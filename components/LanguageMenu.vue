@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { languageList } from '#build/imports';
-const { locale } = useI18n();
+const { setLocaleCookie, locale } = useI18n();
 
 const currentLabel = computed(() =>
   languageList.find(option => option.value === locale.value)?.label ?? 'Lang'
 );
 
 watch(locale, (newLocale) => {
-  const localeCookie = useCookie('i18n_locale');
-  localeCookie.value = newLocale;
+  setLocaleCookie(newLocale);
 });
 
 </script>
