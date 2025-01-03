@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import { sectionList } from '../../utils/constant';
+import { getSectionList } from '../../utils';
 const statusStore = useStatusStore();
+const authStore = useAuthStore();
 
+const currentSectionList = computed(() => {
+  return getSectionList(authStore.isLoggedIn);
+});
 
 const onMenuClick = () => {
   statusStore.setIsMenuOpen(!statusStore.isMenuOpen);
 };
+
+const handleLogout = () => {
+  authStore.signOut();
+};
 </script>
+
 <template>
   <div>
     <div class="border-2 border-slate-600 mx-4 mt-4 flex items-center justify-between mb-0">
@@ -16,7 +25,9 @@ const onMenuClick = () => {
           <img src="@/assets/kuanLOGO.png" alt="" class="w-20 object-contain mx-4">
         </NuxtLink>
         <div>
-          <Button variant="ghost">{{ $t('logout') }}</Button>
+          <Button v-if="authStore.isLoggedIn" variant="ghost" @click="handleLogout">
+            {{ $t('logout') }}
+          </Button>
         </div>
       </div>
       <Button variant="ghost" @click="onMenuClick" class="px-5 hover:bg-slate-600 hover:text-white">
@@ -24,11 +35,10 @@ const onMenuClick = () => {
       </Button>
     </div>
     <div class="flex w-full align-top absolute p-2">
-      <NavBarMenuSection v-for="(section, index) in sectionList" :section="section" :index="index"
+      <NavBarMenuSection v-for="(section, index) in currentSectionList" :section="section" :index="index"
         :key="section.title_string" />
     </div>
   </div>
-
 </template>
 
 <style scoped>

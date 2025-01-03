@@ -1,11 +1,12 @@
 import { defineStore } from "pinia";
 import { useRouter } from "vue-router";
 
-export const useAuthStore = defineStore("login", () => {
+export const useAuthStore = defineStore("auth", () => {
   const supabase = useSupabaseClient();
   const cookie = useCookie('auth');
   const router = useRouter();
   const user = ref(null);
+  const isLoggedIn = computed(() => !!user.value);
 
   const error_message = ref({
     username: "",
@@ -40,42 +41,34 @@ export const useAuthStore = defineStore("login", () => {
     if (isLoading.value) return;
     isLoading.value = true;
 
-    const result = await supabase.auth.signInWithPassword({
-      email: data.email,
-      password: data.password
-    });
-
-    console.log(result)
-
-    isLoading.value = false;
-    // try {
-    //   // https://vue-lessons-api.vercel.app
-    //   const res = await $fetch("https://vue-lessons-api.vercel.app/auth/login", {
-    //     method: "POST",
-    //     body: { username, password },
-    //   });
-
-    //   console.log(res);
-    //   // save token (example logic can be added here)
-    //   cookie.value = {
-    //     token: res.data.token,
-    //   }
-
-    //   router.replace("/");
-    // } catch (error) {
-    //   const { username } = error.response._data.error_message;
-    //   error_message.value = {
-    //     username,
-    //     password: 'password error',
-    //   };
-    // } finally {
-    //   isLoading.value = false;
-    // }
+    try {
+      const { data: authData, error } = await supabase.auth.signInWithPassword({
+        email: data.email,
+        password: data.password
+      });
+      console.log(authData)
+      if (error) throw error;
+      user.value = authData.user;
+      router.push('/member/detail');
+    } catch (error) {
+      console.error(error);
+      error_message.value = {
+        username: error.message,
+        password: 'password error',
+      };
+    } finally {
+      isLoading.value = false;
+    }
   };
 
   const signOut = async () => {
-    const result = await supabase.auth.signOut();
-    console.log(result)
+    try {
+      await supabase.auth.signOut();
+      user.value = null;
+      router.push('/');
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const checkAuth = async () => {
@@ -103,6 +96,8 @@ export const useAuthStore = defineStore("login", () => {
     signUp,
     signInWithPassword,
     signOut,
-    checkAuth
+    checkAuth,
+    user,
+    isLoggedIn
   };
 });
