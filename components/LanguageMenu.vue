@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { languageList } from '#build/imports';
+import { languageList } from '../constants.js';
 const { setLocaleCookie, locale } = useI18n();
 
 const currentLabel = computed(() =>

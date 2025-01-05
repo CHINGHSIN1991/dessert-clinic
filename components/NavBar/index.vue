@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { getSectionList } from '../../utils';
 const statusStore = useStatusStore();
 const authStore = useAuthStore();
+const { getSectionList } = useMenu();
 
 const currentSectionList = computed(() => {
   return getSectionList(authStore.isLoggedIn);
@@ -42,7 +42,6 @@ const handleLogout = () => {
 </template>
 
 <style scoped>
-/* 定義 transition 動畫 */
 .menu-enter-active,
 .menu-leave-active {
   transition: height 0.3s ease;
