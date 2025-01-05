@@ -34,7 +34,7 @@ const handleLogout = () => {
         menu
       </Button>
     </div>
-    <div class="flex w-full align-top absolute p-2">
+    <div class="flex w-full align-top absolute p-2 z-10">
       <NavBarMenuSection v-for="(section, index) in currentSectionList" :section="section" :index="index"
         :key="section.title_string" />
     </div>
