@@ -46,7 +46,6 @@ export const useAuthStore = defineStore("auth", () => {
         email: data.email,
         password: data.password
       });
-      console.log(authData)
       if (error) throw error;
       user.value = authData.user;
       router.push('/member/detail');
