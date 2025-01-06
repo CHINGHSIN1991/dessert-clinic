@@ -7,7 +7,7 @@
     <div class="border-2 border-slate-600 col-span-2">
       NEWS
     </div>
-    <div>
+    <div class="border-2 border-slate-600">
     </div>
     <div class="border-2 border-slate-600">
       NEWS
