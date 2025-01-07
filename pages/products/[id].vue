@@ -41,6 +41,25 @@ const quantity = ref(1);
         <br>
         <NuxtLink :to="`/product/${route.params.id}/C`">C</NuxtLink>
         <NuxtPage /> -->
+      <Breadcrumb class="mx-6 mt-4 mb-2">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/products">
+              {{ $t('section-product-introduction') }}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink :href="`/products/${mockProductT.category}`">
+              {{ $t(`product-category-${mockProductT.category}`) }}
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{{ $t(mockProductT.name_key) }}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
         <div class="relative overflow-hidden rounded-lg border-2 border-slate-600">
           <div class="relative h-[400px]">
@@ -57,10 +76,10 @@ const quantity = ref(1);
           </div>
 
           <Button variant="ghost" class="absolute left-2 top-1/2 -translate-y-1/2" @click="prevSlide">
-            ←
+            <Icon name="ep:arrow-left-bold" style="color: black" />
           </Button>
           <Button variant="ghost" class="absolute right-2 top-1/2 -translate-y-1/2" @click="nextSlide">
-            →
+            <Icon name="ep:arrow-right-bold" style="color: black" />
           </Button>
         </div>
 
