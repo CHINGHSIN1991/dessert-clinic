@@ -11,7 +11,7 @@ export type ProductSpec = {
   }[]
 }
 
-export interface product {
+export interface Product {
   id: string,
   enable: boolean,
   category: ProductCategory,
