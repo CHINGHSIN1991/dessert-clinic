@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       ]
     }
   },
+  build: {
+    transpile: ['gsap']
+  },
   supabase: {
     redirect: false,
   },
