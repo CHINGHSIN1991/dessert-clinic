@@ -44,15 +44,12 @@ const quantity = ref(1);
       <Breadcrumb class="mx-6 mt-4 mb-2">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/products">
-              {{ $t('section-product-introduction') }}
-            </BreadcrumbLink>
+            <NuxtLink to="/products">{{ $t('section-product-introduction') }}</NuxtLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbLink :href="`/products/${mockProductT.category}`">
-              {{ $t(`product-category-${mockProductT.category}`) }}
-            </BreadcrumbLink>
+            <NuxtLink :to="`/products/${mockProductT.category}`">{{ $t(`product-category-${mockProductT.category}`) }}
+            </NuxtLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
