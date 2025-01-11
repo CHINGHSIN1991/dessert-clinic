@@ -14,7 +14,7 @@ watch(locale, (newLocale) => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger as-child>
-      <Button variant="ghost" class="w-14">
+      <Button variant="ghost" class="w-14 h-11">
         <div class="flex items-center px-1">
           <Icon name="hugeicons:language-skill" class="text-slate-600 w-4 h-4" />
           <span class="text-sm pl-1">{{ currentLabel }}</span>

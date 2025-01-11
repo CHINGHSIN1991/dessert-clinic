@@ -18,19 +18,26 @@ const handleLogout = () => {
 
 <template>
   <div>
-    <div class="border-2 border-slate-600 mx-4 mt-4 flex items-center justify-between mb-0">
-      <div class="flex justify-between w-full h-[36px] items-center border-r-2 border-slate-600">
+    <div class="border-2 h-12 border-slate-600 mx-4 mt-4 flex items-center justify-between mb-0">
+      <div class="flex justify-between w-full h-12 items-center border-r-2 border-slate-600 overflow-hidden">
         <LanguageMenu />
-        <NuxtLink to="/">
-          <img src="@/assets/kuanLOGO.png" alt="" class="w-20 object-contain mx-4">
+        <NuxtLink to="/" class="h-12 flex items-center p-0 pl-24">
+          <img src="@/assets/kuanLOGO.png" alt=""
+            class="h-16 w-36 object-contain mx-4 opacity-75 hover:opacity-100 hover:w-40 transition-all duration-300 ">
         </NuxtLink>
-        <div>
+        <div class="flex items-center">
+          <Button variant="ghost" class="px-3 h-11">
+            <Icon name="akar-icons:person" class="text-slate-600 w-4 h-4" />
+          </Button>
+          <Button variant="ghost" class="px-3 h-11">
+            <Icon name="akar-icons:cart" class="text-slate-600 w-4 h-4" />
+          </Button>
           <Button v-if="authStore.isLoggedIn" variant="ghost" @click="handleLogout">
             {{ $t('logout') }}
           </Button>
         </div>
       </div>
-      <Button variant="ghost" @click="onMenuClick" class="px-5 hover:bg-slate-600 hover:text-white">
+      <Button variant="ghost" @click="onMenuClick" class="px-5 h-11 hover:bg-slate-600 hover:text-white">
         menu
       </Button>
     </div>
