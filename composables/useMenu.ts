@@ -1,3 +1,8 @@
+const commonItems = [{
+  label_string: 'member-cart',
+  url: '/member/cart',
+}]
+
 const getMemberItems = (isLoggedIn: boolean) => {
   if (isLoggedIn) {
     return [
@@ -9,17 +14,15 @@ const getMemberItems = (isLoggedIn: boolean) => {
         label_string: 'member-order',
         url: '/member/orders',
       },
-      {
-        label_string: 'member-cart',
-        url: '/member/cart',
-      }
+      ...commonItems
     ]
   }
   return [
     {
       label_string: 'member-login-signup',
       url: '/member/login',
-    }
+    },
+    ...commonItems
   ]
 }
 
