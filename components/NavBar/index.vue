@@ -19,19 +19,20 @@ const handleLogout = () => {
 <template>
   <div>
     <div class="border-2 h-12 border-slate-600 mx-4 mt-4 flex items-center justify-between mb-0">
-      <div class="flex justify-between w-full h-12 items-center border-r-2 border-slate-600 overflow-hidden">
+      <div class="flex justify-between w-full h-12 items-center border-r-2 border-slate-600 ">
         <LanguageMenu />
         <NuxtLink to="/" class="h-12 flex items-center p-0 pl-24">
           <img src="@/assets/kuanLOGO.png" alt=""
-            class="h-16 w-36 object-contain mx-4 opacity-75 hover:opacity-100 hover:w-40 transition-all duration-300 ">
+            class="h-16 w-36 object-contain mx-4 opacity-85 hover:opacity-100 hover:w-40 transition-all duration-100 ">
         </NuxtLink>
-        <div class="flex items-center">
-          <Button variant="ghost" class="px-3 h-11">
-            <Icon name="akar-icons:person" class="text-slate-600 w-4 h-4" />
-          </Button>
-          <Button variant="ghost" class="px-3 h-11">
-            <Icon name="akar-icons:cart" class="text-slate-600 w-4 h-4" />
-          </Button>
+        <div class="flex items-center relative">
+          <NavBarUserButton />
+          <NuxtLink to="/member/cart">
+            <Button variant="ghost" class="px-3 h-11 relative">
+              <Icon name="akar-icons:cart" class="text-slate-600 w-4 h-4" />
+              <Badge class="absolute left-6 bottom-7 z-50 bg-red-500">20</Badge>
+            </Button>
+          </NuxtLink>
           <Button v-if="authStore.isLoggedIn" variant="ghost" @click="handleLogout">
             {{ $t('logout') }}
           </Button>
