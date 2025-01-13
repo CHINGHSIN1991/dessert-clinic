@@ -11,9 +11,6 @@ const onMenuClick = () => {
   statusStore.setIsMenuOpen(!statusStore.isMenuOpen);
 };
 
-const handleLogout = () => {
-  authStore.signOut();
-};
 </script>
 
 <template>
@@ -33,9 +30,6 @@ const handleLogout = () => {
               <Badge class="absolute left-6 bottom-7 z-50 bg-red-500">20</Badge>
             </Button>
           </NuxtLink>
-          <Button v-if="authStore.isLoggedIn" variant="ghost" @click="handleLogout">
-            {{ $t('logout') }}
-          </Button>
         </div>
       </div>
       <Button variant="ghost" @click="onMenuClick" class="px-5 h-11 hover:bg-slate-600 hover:text-white">
