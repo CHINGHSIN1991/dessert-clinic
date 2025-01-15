@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { mockProduct } from '~/constants';
+import { toast } from 'vue-sonner';
+
 const route = useRoute();
+const router = useRouter();
 const { data } = useFetch<any>(`https://vue-lessons-api.vercel.app/courses/${route.params.id}`);
 // 輪播圖相關
 const currentSlide = ref(0);
@@ -24,6 +27,17 @@ const mockProductT = toRef(mockProduct);
 
 const selectedSpec = ref(mockProductT.value.spec[0]);
 const quantity = ref(1);
+
+const onToast = (product: string) => {
+  console.log(product);
+  toast('Product added', {
+    description: `${product} successfully added to shopping cart`,
+    action: {
+      label: 'Go to cart',
+      onClick: () => router.push({ path: "/member/cart" }),
+    },
+  });
+};
 </script>
 
 <template>
@@ -122,13 +136,14 @@ const quantity = ref(1);
               </div>
             </div>
 
-            <Button class="w-full">
+            <Button class="w-full" @click="onToast(mockProductT.name_key)">
               加入購物車
             </Button>
           </div>
         </div>
       </div>
     </div>
+    <Toaster />
   </div>
 </template>
 
