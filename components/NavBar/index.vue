@@ -27,7 +27,7 @@ const onMenuClick = () => {
           <NuxtLink to="/member/cart">
             <Button variant="ghost" class="px-3 h-11 relative">
               <Icon name="akar-icons:cart" class="text-slate-600 w-4 h-4" />
-              <Badge class="absolute left-6 bottom-7 z-50 bg-red-500">20</Badge>
+              <Badge class="absolute left-6 bottom-7 z-50 bg-red-500 hover:bg-red-700">20</Badge>
             </Button>
           </NuxtLink>
         </div>

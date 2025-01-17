@@ -9,30 +9,27 @@ const handleLogout = () => {
 <template>
   <div class="relative">
     <b class="absolute right-11 top-2.5 whitespace-nowrap">Hello chinghisnc</b>
-    <DropdownMenu>
+    <DropdownMenu class="border-0">
       <DropdownMenuTrigger as-child>
         <Button variant="ghost" class="px-3 h-11">
           <Icon name="akar-icons:person" class="text-slate-600 w-4 h-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56">
-        <DropdownMenuLabel>{{ 'Hi ' + authStore.user?.name ?? 'User' }}</DropdownMenuLabel>
+        <DropdownMenuLabel>{{ `Hi ${authStore.user?.name ?? 'User'}` }}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <NuxtLink to="/member/detail">
             <DropdownMenuItem>
               <span>{{ $t('member-detail') }}</span>
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
             </DropdownMenuItem>
           </NuxtLink>
           <DropdownMenuItem v-if="authStore.isLoggedIn" @click="handleLogout">
             <span>{{ $t('logout') }}</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <NuxtLink v-else to="/member/login">
             <DropdownMenuItem>
               <span>{{ $t('member-login-signup') }}</span>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
             </DropdownMenuItem>
           </NuxtLink>
         </DropdownMenuGroup>
