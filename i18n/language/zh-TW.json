@@ -1,4 +1,5 @@
 {
+  // common
   "cancel": "取消",
   "email": "Email信箱",
   "date": "日期",
@@ -6,6 +7,29 @@
   "message": "訊息內容",
   "upload": "上傳",
   "logout": "登出",
+  "read-more": "閱讀更多",
+
+  // info
+  "home-banner-1-title": "手工製作的美味",
+  "home-banner-1-description": "每一口都充滿匠人精神",
+  "home-banner-2-title": "嚴選食材",
+  "home-banner-2-description": "只為帶給您最好的味道",
+  "featured-products": "精選商品",
+  "brand-story-title": "品牌故事",
+  "brand-story-description": "從一個小小的想法開始...",
+  "learn-more": "了解更多",
+  "latest-news": "最新消息",
+  "news-title": "新品上市",
+  "news-description": "新品介紹內容...",
+  
+
+  // setion info
+  "faq-title": "常見問題",
+  "faq-categories": "問題分類",
+  "faq-category-product": "商品相關",
+  "faq-category-shipping": "運送相關",
+  "faq-category-payment": "付款相關",
+
   "section-product-introduction":"產品介紹",
   "section-about": "關於我們",
   "section-event": "最新消息",
@@ -19,8 +43,79 @@
   "event-group-buying": "團購開團",
   "event-event": "出攤消息",
   "event-news": "新聞",
+  "member-login": "登入",
+  "member-signup": "註冊",
   "member-login-signup": "註冊 / 登入",
   "member-detail": "會員資訊",
   "member-order": "訂單查詢",
-  "member-cart": "購物車"
+  "member-cart": "購物車",
+  "member-create-new-account": "建立新帳號",
+  "member-account-exist-qst": "已經有帳號了?",
+  "member-email": "電子信箱",
+  "member-password": "密碼",
+  "member-agree-policy": "我同意隱私權政策",
+
+  "cart": {
+    "title": "購物車",
+    "empty": "購物車是空的",
+    "go-shopping": "去逛逛",
+    "product-info": "商品資訊",
+    "unit-price": "單價",
+    "quantity": "數量",
+    "subtotal": "小計",
+    "spec": "規格",
+    "delete": "刪除",
+    "continue-shopping": "繼續購物",
+    "checkout": "前往結帳",
+    "order-summary": "訂單摘要",
+    "total-products": "商品總計",
+    "shipping": "運費",
+    "free-shipping": "免運費",
+    "free-shipping-notice": "滿 NT$ 1,000 免運費",
+    "discount": "折扣",
+    "total": "總計",
+    "coupon": {
+      "button": "使用優惠碼或禮物卡",
+      "placeholder": "請輸入優惠碼",
+      "apply": "套用"
+    },
+    "shipping-method": {
+      "title": "運送方式",
+      "home-delivery": "宅配到府",
+      "home-delivery-desc": "2-3 個工作天",
+      "cvs": "超商取貨",
+      "cvs-desc": "3-5 個工作天"
+    },
+    "payment-method": {
+      "title": "付款方式",
+      "credit-card": "信用卡付款",
+      "credit-card-desc": "Visa, Master, JCB",
+      "bank-transfer": "銀行轉帳",
+      "bank-transfer-desc": "需於 24 小時內完成付款",
+      "cvs-payment": "超商付款",
+      "cvs-payment-desc": "需於 24 小時內完成付款"
+    },
+    "notices": {
+      "price": "※ 實際金額以結帳金額為準",
+      "coupon": "※ 優惠不得重複使用",
+      "sale": "※ 特價商品不適用折扣"
+    }
+  },
+  "auth": {
+    "create-account": "建立新帳號",
+    "sign-in": "登入帳號",
+    "already-have-account": "已經有帳號了？",
+    "dont-have-account": "還沒有帳號？",
+    "sign-up-free": "免費註冊",
+    "name": "姓名",
+    "name-placeholder": "請輸入姓名",
+    "email": "電子信箱",
+    "email-placeholder": "請輸入電子信箱",
+    "password": "密碼",
+    "password-placeholder": "請輸入密碼",
+    "newsletter-signup": "我願意訂閱最新消息",
+    "forgot-password": "忘記密碼？",
+    "sign-up": "註冊",
+    "login": "登入"
+  }
 }
